@@ -1,0 +1,26 @@
+# Deploy from a GitHub repository with Render > New > Blueprint.
+# Netlify hosts the frontend; Render hosts FFmpeg and the photo conversion API.
+services:
+  - type: web
+    name: forma-conversion-api
+    runtime: docker
+    region: frankfurt
+    plan: free  # testing only; upgrade to 1c-2g for 4K / large media
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: DATA_DIR
+        value: /data
+      - key: MAX_UPLOAD_MB
+        value: "512"
+      - key: MAX_CONCURRENT_JOBS
+        value: "1"
+      - key: JOB_TTL_SECONDS
+        value: "3600"
+      - key: API_ACCESS_KEY
+        sync: false  # choose a strong random key; enter same key in Forma Settings
+      - key: CORS_ORIGINS
+        sync: false  # enter exact https://YOUR-NETLIFY-SITE.netlify.app on Render

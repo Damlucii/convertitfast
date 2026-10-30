@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0f12">
+  <meta name="description" content="Forma — precízny prevod fotografií a videí bez kompromisov.">
+  <title>Forma — Media converter</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<svg width="0" height="0" class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 17V4m-5 5 5-5 5 5M4 17v3h16v-3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="15" height="14" rx="3"/><path d="m18 10 4-2v8l-4-2"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19 13 2-1-2-1-.6-2 1-2-2-2-2 1-2-.6-1-2-1 2-2 .6-2-1-2 2 1 2-.6 2-2 1 2 1 .6 2-1 2 2 2 2-1 2 .6 1 2 1-2z"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v6H4V5h6"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M5 10A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 13-3"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15A8 8 0 0 1 9 4 8 8 0 1 0 20 15z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9 6.3 6.3M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-compare" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M12 4v16M5 16l4-5 3 3M16 9h3"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v7c0 5 3 8 8 10 5-2 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 11h7l-1 9 10-12h-7z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6"/></symbol>
+</svg>
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <a href="#" class="brand" aria-label="Forma home"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>forma<span class="brand-dot">.</span></span></a>
+    <div class="sidebar-section"><span class="sidebar-label">WORKSPACE</span>
+      <button class="nav-item active" id="nav-workspace"><svg><use href="#i-folder"/></svg> Converter <span class="nav-key">⌘ 1</span></button>
+      <button class="nav-item" id="nav-history"><svg><use href="#i-clock"/></svg> History</button>
+    </div>
+    <div class="sidebar-section spaced"><span class="sidebar-label">PREFERENCES</span>
+      <button class="nav-item" id="nav-settings"><svg><use href="#i-settings"/></svg> Settings</button>
+      <button class="nav-item" id="nav-theme"><svg><use href="#i-moon"/></svg> Appearance</button>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="engine-mini" id="engine-mini"><span class="pulse-dot"></span><span id="engine-label">Local engine</span><svg><use href="#i-chevron"/></svg></div>
+      <div class="sidebar-footer">CRAFTED FOR CLARITY <span>v1.0</span></div>
+    </div>
+  </aside>
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="breadcrumbs"><button class="mobile-menu icon-button" id="mobile-menu" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button><span class="breadcrumb-muted">Workspace</span><span class="crumb-separator">/</span><span id="crumb-current">Converter</span></div>
+      <div class="top-actions"><span class="header-private"><svg><use href="#i-shield"/></svg> Your files, your control</span><button id="top-add" class="button button-quiet small"><svg><use href="#i-plus"/></svg> Add files</button><button id="top-settings" class="icon-button" title="Settings" aria-label="Settings"><svg><use href="#i-settings"/></svg></button></div>
+    </header>
+    <main class="content">
+      <section id="converter-view">
+        <div class="intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> MEDIA CONVERTER <span class="eyebrow-number">/ 001</span></div>
+          <div class="intro-line"><h1>Every detail <em>matters.</em></h1><span class="intro-spark"><svg><use href="#i-spark"/></svg></span></div>
+          <p>Thoughtful conversion for your images and videos.<br class="desktop-break"> Uncompromising quality. Nothing unnecessary.</p>
+        </div>
+        <div class="toolbar"><div class="category-tabs" role="tablist" aria-label="Media type"><button id="tab-image" class="tab active" role="tab" aria-selected="true"><svg><use href="#i-image"/></svg> Images</button><button id="tab-video" class="tab" role="tab" aria-selected="false"><svg><use href="#i-video"/></svg> Videos</button></div><div class="toolbar-right"><span class="tiny-label" id="files-counter">0 files in queue</span><button id="clear-all" class="link-button" hidden>Clear all</button></div></div>
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop files or choose files"><div class="drop-illustration"><span class="stack back"></span><span class="stack middle"></span><span class="stack front"><svg><use href="#i-upload"/></svg></span><span class="drop-glow"></span></div><div class="drop-title">Drop your files here<span class="drop-comma">,</span></div><p>or <button id="browse-inline" class="inline-link">browse your device</button> to get started</p><div class="drop-formats" id="drop-formats">JPEG · PNG · HEIC · WEBP · AVIF · TIFF + more</div><span class="drop-note">Drag & drop · Multiple files supported</span></div>
+        <div id="queue-area" hidden>
+          <div class="queue-header"><div><h2>Your files <span class="count-pill" id="queue-count">0</span></h2><p>Select a file to configure its conversion.</p></div><button class="button button-secondary small" id="add-more"><svg><use href="#i-plus"/></svg> Add more</button></div>
+          <div class="work-grid"><div class="queue-list" id="queue-list" aria-label="Files queue"></div><div class="inspector" id="inspector"></div></div>
+          <div class="queue-actions"><div class="queue-note"><svg><use href="#i-info"/></svg><span id="queue-note">Format conversion can change metadata or color information.</span></div><div class="queue-buttons"><button id="download-all" class="button button-secondary" hidden><svg><use href="#i-download"/></svg> Download all</button><button id="convert-all" class="button button-primary"><svg><use href="#i-bolt"/></svg> Convert all <svg><use href="#i-arrow"/></svg></button></div></div>
+        </div>
+        <div class="features"><div class="feature"><div class="feature-icon"><svg><use href="#i-spark"/></svg></div><h3>Quality-first</h3><p>Keep the resolution and detail that matter.</p></div><div class="feature"><div class="feature-icon"><svg><use href="#i-bolt"/></svg></div><h3>Made to move</h3><p>Efficient processing, with clear progress.</p></div><div class="feature"><div class="feature-icon"><svg><use href="#i-shield"/></svg></div><h3>Privacy by design</h3><p>Local where possible, transparent otherwise.</p></div></div>
+      </section>
+      <section id="history-view" hidden><div class="eyebrow"><span class="eyebrow-line"></span> YOUR ACTIVITY <span class="eyebrow-number">/ 002</span></div><h1 class="history-title">Conversion <em>history.</em></h1><p class="history-subtitle">Recent conversions on this browser. Files themselves are not saved here.</p><div class="history-list" id="history-list"></div><button class="button button-secondary" id="history-clear">Clear history</button></section>
+    </main>
+    <footer class="site-footer"><span>FORMA © 2026</span><span>Engineered to preserve.</span><span>PRIVACY FIRST • QUALITY ALWAYS</span></footer>
+  </div>
+</div>
+<input type="file" id="file-input" multiple hidden>
+<div class="modal-backdrop" id="settings-modal" hidden><div class="modal settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settings-title"><div class="modal-top"><div><div class="eyebrow eyebrow-small">CONFIGURATION</div><h2 id="settings-title">Engine settings</h2></div><button class="icon-button" id="close-settings" aria-label="Close settings"><svg><use href="#i-x"/></svg></button></div><div class="settings-body"><p>Forma works in your browser for basic image conversions. Connect your own converter API for HEIC, RAW, advanced image processing and video.</p><label for="api-url">CONVERSION SERVER URL</label><div class="setting-field"><input type="url" id="api-url" placeholder="https://your-backend.example.com" spellcheck="false"><button class="button button-secondary small" id="test-api">Test</button></div><div class="setting-field setting-key"><input type="password" id="api-key" placeholder="Server access key (if configured)" autocomplete="off" spellcheck="false" aria-label="Server access key"></div><div class="connection-message" id="connection-message">No server connected. Basic JPG / PNG / WebP conversions remain available.</div><div class="setting-divider"></div><div class="setting-row"><div><strong>Appearance</strong><small>Choose how Forma looks</small></div><button id="modal-theme" class="button button-secondary small"><svg><use href="#i-moon"/></svg> Toggle theme</button></div><div class="setting-row"><div><strong>Default quality</strong><small>Used for newly imported files</small></div><select id="default-quality"><option value="maximum">Maximum</option><option value="lossless">True lossless</option><option value="balanced">Balanced</option><option value="small">Small file</option></select></div></div><div class="modal-footer"><a href="https://docs.netlify.com/" target="_blank" rel="noopener">Netlify docs <svg><use href="#i-external"/></svg></a><button id="save-settings" class="button button-primary">Save changes <svg><use href="#i-check"/></svg></button></div></div></div>
+<div class="modal-backdrop" id="compare-modal" hidden><div class="modal comparison-dialog" role="dialog" aria-modal="true" aria-labelledby="compare-title"><div class="modal-top"><div><div class="eyebrow eyebrow-small">VISUAL INSPECTION</div><h2 id="compare-title">Before / After</h2></div><button class="icon-button" id="close-compare" aria-label="Close comparison"><svg><use href="#i-x"/></svg></button></div><div class="compare-stage" id="compare-stage"><img id="compare-original" alt="Original file"><div class="compare-after" id="compare-after"><img id="compare-result" alt="Converted file"></div><div class="compare-line" id="compare-line"><span>↔</span></div><input type="range" min="0" max="100" value="50" id="compare-range" aria-label="Compare original and converted images"></div><div class="compare-footer"><span>ORIGINAL</span><span>Drag the divider to inspect details</span><span>CONVERTED</span></div></div></div>
+<div id="toast-area" aria-live="polite"></div>
+<script src="./app.js" defer></script>
+</body>
+</html>

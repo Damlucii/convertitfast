@@ -1,0 +1,16 @@
+services:
+  converter:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_DIR: /data
+      MAX_UPLOAD_MB: 2048
+      JOB_TTL_SECONDS: 3600
+      MAX_CONCURRENT_JOBS: 2
+      CORS_ORIGINS: "https://YOUR-SITE.netlify.app,http://localhost:8888,http://localhost:5173"
+    volumes:
+      - forma_jobs:/data
+    restart: unless-stopped
+volumes:
+  forma_jobs:
